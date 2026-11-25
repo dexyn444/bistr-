@@ -1,220 +1,846 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cardápio digital · Quintal Bistrô</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14251d">
+<meta name="description" content="Conheça o Quintal Bistrô em Santa Rosa de Viterbo. Gastronomia, sabor e momentos especiais.">
+<title>Quintal Bistrô | Sabor e experiência</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--paper:#F7F3EA;--raised:#EEE8DA;--ink:#25302B;--soft:#6B6F63;--accent:#2F5D4B;--accent-ink:#F7F3EA;--line:#D9D2C0;--gold:#9A7B3C;--wa:#25D366;--wa-ink:#073B29;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171A18;--raised:#212522;--ink:#EEEADF;--soft:#A3A597;--accent:#86B9A3;--accent-ink:#13201A;--line:#343A35;--gold:#D2B26B}}
-:root[data-theme="dark"]{--paper:#171A18;--raised:#212522;--ink:#EEEADF;--soft:#A3A597;--accent:#86B9A3;--accent-ink:#13201A;--line:#343A35;--gold:#D2B26B}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:100px}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:20}
-.w{max-width:640px;margin:0 auto;padding:0 22px}
-.tag{background:var(--ink);color:var(--paper);font-size:12.5px;text-align:center;padding:8px 14px;line-height:1.4}
-.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
-h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,9vw,50px);line-height:1.04;margin:0 0 16px;letter-spacing:-.02em}
-h1 em{font-weight:400}
-.lead{font-size:16px;line-height:1.55;color:var(--soft);margin:0 0 24px;max-width:48ch}
-.hero{padding:40px 0 28px}
-.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:13px 20px;border-radius:3px}
-.benefits{border-top:1px solid var(--line);padding:6px 0 10px}
-.b{padding:16px 0;border-bottom:1px dotted var(--line)}
-.b h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin:0 0 4px}
-.b p{margin:0;font-size:14px;color:var(--soft);line-height:1.5}
-.try{padding:34px 0 6px}
-.try h2,h2.sec{font-family:'Fraunces',serif;font-weight:500;font-size:26px;margin:0 0 6px}
-.try p{margin:0;font-size:14px;color:var(--soft);line-height:1.5}
-.rest{border:1px solid var(--line);border-radius:4px;margin:18px 0 0;overflow:hidden}
-.rest header{padding:22px 18px 16px;background:var(--raised)}
-.rest header h3{font-family:'Fraunces',serif;font-weight:500;font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
-.rest header p{margin:0;font-size:13px;color:var(--soft);line-height:1.55}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
-nav .in{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}
-nav a{flex:none;text-decoration:none;color:var(--soft);font-size:13px;padding:7px 12px;border:1px solid var(--line);border-radius:3px}
-nav a:hover{color:var(--accent);border-color:var(--accent)}
-#menu{padding:0 18px 10px}
-section.cat{padding-top:24px}
-section.cat h4{font-family:'Fraunces',serif;font-weight:500;font-size:21px;margin:0 0 4px}
-.item{display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px dotted var(--line)}
-.emo{font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:var(--raised);border-radius:4px;flex:none}
-.t{flex:1;min-width:0}
-.t h5{font-size:15px;font-weight:600;margin:0 0 2px}
-.t p{margin:0 0 3px;font-size:12.5px;color:var(--soft);line-height:1.4}
-.price{font-family:'Fraunces',serif;font-size:15px}
-.qty{display:flex;align-items:center;gap:8px;flex:none}
-.qty button{width:32px;height:32px;border:1px solid var(--line);background:none;color:var(--ink);border-radius:3px;font-size:18px;line-height:1;cursor:pointer}
-.qty button.add{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.qty span{min-width:14px;text-align:center;font-size:14px;font-weight:600}
-.how{padding:34px 0 8px}
-.step{display:flex;gap:14px;padding:12px 0}
-.step b{font-family:'Fraunces',serif;font-weight:500;font-size:22px;color:var(--gold);min-width:22px}
-.step p{margin:0;font-size:14.5px;line-height:1.5}
-.step span{color:var(--soft)}
-.incl{margin:10px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.incl li{padding:11px 0;border-bottom:1px dotted var(--line);font-size:14.5px}
-.final{padding:36px 0 20px}
-.final h2{font-family:'Fraunces',serif;font-weight:500;font-size:28px;margin:0 0 10px;line-height:1.1}
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--paper);border-top:1px solid var(--line);padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px))}
-.bar button{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:640px;margin:0 auto;border:none;border-radius:3px;padding:14px 16px;font:inherit;font-weight:600;font-size:15px;cursor:pointer}
-.bar .cart{background:var(--accent);color:var(--accent-ink)}
-.bar .talk{background:var(--wa);color:var(--wa-ink);justify-content:center}
-.sheet{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.45);display:none;align-items:flex-end}
-.sheet.show{display:flex}
-.panel{background:var(--paper);width:100%;max-width:640px;margin:0 auto;max-height:88%;overflow:auto;padding:22px 22px calc(22px + env(safe-area-inset-bottom,0px));border-radius:8px 8px 0 0}
-.panel h2{font-family:'Fraunces',serif;font-weight:500;font-size:24px;margin:0 0 10px}
-.line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-size:14px;border-bottom:1px dotted var(--line)}
-.total{display:flex;justify-content:space-between;font-weight:600;padding:14px 0 6px;font-size:16px}
-.panel input{width:100%;margin:8px 0;background:var(--raised);border:1px solid var(--line);border-radius:3px;padding:12px;font:inherit;font-size:14px;color:var(--ink)}
-.send{display:block;width:100%;margin-top:10px;background:var(--wa);color:var(--wa-ink);border:none;border-radius:3px;padding:14px;font:inherit;font-weight:600;font-size:15px;cursor:pointer}
-.close{display:block;width:100%;margin-top:8px;background:none;border:none;color:var(--soft);font:inherit;font-size:13px;padding:10px;cursor:pointer}
-</style>
-</head>
-<body>
-<div class="tag">Demonstração preparada para o Quintal Bistrô. Pratos e preços são ilustrativos.</div>
+:root {
+  --green: #14251d;
+  --green2: #20382b;
+  --gold: #c9a66b;
+  --cream: #f5f0e7;
+  --white: #fff;
+  --text: #242820;
+}
 
-<div class="w">
-  <div class="hero">
-    <p class="kicker">Cardápio digital</p>
-    <h1>O cardápio do Quintal Bistrô, <em>no celular do cliente</em></h1>
-    <p class="lead">Seus clientes abrem pelo QR code na mesa ou pelo link no Instagram, escolhem os pratos e enviam o pedido direto para o seu WhatsApp. Teste logo abaixo.</p>
-    <a class="btn" href="#teste">Testar o cardápio</a>
-  </div>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <div class="benefits">
-    <div class="b"><h3>QR code na mesa</h3><p>Sem cardápio de papel e sem fila no balcão. O cliente aponta a câmera e vê tudo.</p></div>
-    <div class="b"><h3>Pedido pronto no WhatsApp</h3><p>O pedido chega organizado, com itens, total, nome e mesa. Menos erro e menos anotação.</p></div>
-    <div class="b"><h3>Preços sempre atualizados</h3><p>Mudou o prato do dia ou o valor? Atualizamos o cardápio e o QR code continua o mesmo.</p></div>
-    <div class="b"><h3>Seu link para divulgar</h3><p>Um endereço só para colocar no Instagram, no Google Maps e no status do WhatsApp.</p></div>
-  </div>
+html { scroll-behavior: smooth; }
 
-  <div class="try" id="teste">
-    <h2 class="sec">Teste como o cliente vê</h2>
-    <p>Adicione itens, toque em “Ver pedido” e envie. No teste, o WhatsApp abre para você escolher o contato.</p>
-  </div>
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-  <div class="rest">
-    <header>
-      <h3>Quintal Bistrô</h3>
-      <p>Almoço de segunda a sábado, das 11h às 14h<br>R. Francisco Carvalho de Andrade, 143</p>
-    </header>
-    <nav><div class="in" id="nav"></div></nav>
-    <div id="menu"></div>
-  </div>
+a { text-decoration: none; color: inherit; }
 
-  <div class="how">
-    <h2 class="sec">Como funciona</h2>
-    <div class="step"><b>1</b><p>Você nos passa o cardápio<br><span>Pratos, preços e fotos, se tiver.</span></p></div>
-    <div class="step"><b>2</b><p>Montamos o seu cardápio<br><span>Com o nome, as cores e o número do restaurante.</span></p></div>
-    <div class="step"><b>3</b><p>Entregamos o link e o QR code<br><span>Pronto para imprimir e colocar nas mesas.</span></p></div>
-    <ul class="incl">
-      <li>Cardápio com o nome e as cores do seu restaurante</li>
-      <li>Pedidos enviados direto para o seu WhatsApp</li>
-      <li>QR code pronto para imprimir</li>
-      <li>Atualização de pratos e preços quando precisar</li>
-    </ul>
-  </div>
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
 
-  <div class="final">
-    <h2>Quer esse cardápio para o seu restaurante?</h2>
-    <p class="lead">Fale com a gente e combinamos os próximos passos.</p>
-    <a class="btn" id="talkLink" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
-  </div>
-</div>
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
 
-<div class="bar" id="bar"></div>
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  background: rgba(20,37,29,.94);
+  backdrop-filter: blur(12px);
+  transition: .3s;
+}
 
-<div class="sheet" id="sheet">
-  <div class="panel">
-    <h2>Seu pedido</h2>
-    <div id="lines"></div>
-    <div class="total"><span>Total</span><span id="sumTotal"></span></div>
-    <input id="nome" type="text" placeholder="Seu nome">
-    <input id="local" type="text" placeholder="Mesa ou endereço de entrega">
-    <button class="send" id="sendBtn">Enviar pedido no WhatsApp</button>
-    <button class="close" id="closeBtn">Voltar ao cardápio</button>
-  </div>
-</div>
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-<script>
-// Número de WhatsApp de quem vende (somente dígitos, com 55 + DDD). Ex.: "5516999999999"
-const SELLER="5516974077006";
-const talkUrl="https://wa.me/"+SELLER+"?text="+encodeURIComponent("Olá! Vi a demonstração do cardápio digital do Quintal Bistrô e quero saber mais.");
-document.getElementById("talkLink").href=talkUrl;
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
 
-const MENU=[
-{k:"pratos",n:"Pratos",i:[
- ["🍗","Parmegiana de frango","Empanado, molho artesanal e queijo gratinado. Arroz, feijão e fritas.",34],
- ["🥩","Parmegiana de carne","Bife empanado e mussarela gratinada. Arroz, feijão e fritas.",38],
- ["🍽️","Prato do dia","Pergunte ao garçom a sugestão de hoje.",28]]},
-{k:"macarrao",n:"Macarrão na hora",i:[
- ["🍝","Macarrão ao vivo","Escolha a massa, o molho e os ingredientes frescos do balcão.",32],
- ["🧀","Ingrediente extra","Frango, bacon, calabresa, queijo ou legumes.",5]]},
-{k:"saladas",n:"Saladas",i:[
- ["🥗","Salada da casa","Mix de folhas, tomate, cenoura e molho da casa.",16],
- ["🥗","Salada com frango","Folhas, frango grelhado, croutons e parmesão.",26]]},
-{k:"sobremesas",n:"Sobremesas",i:[
- ["🍮","Pudim de leite","Caseiro, com calda de caramelo.",12]]},
-{k:"bebidas",n:"Bebidas",i:[
- ["🍊","Suco natural","Laranja, limão, maracujá ou acerola.",10],
- ["🥤","Refrigerante lata","",7],
- ["☕","Café expresso","",6]]}
-];
-const qty={};
-const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-const menuEl=document.getElementById("menu"),navEl=document.getElementById("nav");
-MENU.forEach(c=>{
-  const a=document.createElement("a");a.href="#"+c.k;a.textContent=c.n;navEl.appendChild(a);
-  const s=document.createElement("section");s.className="cat";s.id=c.k;s.innerHTML=`<h4>${c.n}</h4>`;
-  c.i.forEach(([emo,name,desc,price])=>{
-    const key=c.k+"|"+name;qty[key]=0;
-    const d=document.createElement("div");d.className="item";d.dataset.key=key;
-    d.innerHTML=`<div class="emo">${emo}</div><div class="t"><h5>${name}</h5>${desc?`<p>${desc}</p>`:""}<span class="price">${brl(price)}</span></div><div class="qty"></div>`;
-    d._price=price;d._name=name;s.appendChild(d);
-  });
-  menuEl.appendChild(s);
-});
-function change(key,d){qty[key]=Math.max(0,qty[key]+d);render();}
-function lines(){const o=[];document.querySelectorAll(".item").forEach(d=>{const q=qty[d.dataset.key];if(q>0)o.push({q,name:d._name,sub:q*d._price})});return o}
-function render(){
-  let count=0,total=0;
-  document.querySelectorAll(".item").forEach(d=>{
-    const q=qty[d.dataset.key],box=d.querySelector(".qty");
-    box.innerHTML=q>0?`<button data-d="-1" aria-label="Remover">−</button><span>${q}</span><button class="add" data-d="1" aria-label="Adicionar">+</button>`:`<button class="add" data-d="1" aria-label="Adicionar">+</button>`;
-    box.querySelectorAll("button").forEach(b=>b.onclick=()=>change(d.dataset.key,+b.dataset.d));
-    count+=q;total+=q*d._price;
-  });
-  const bar=document.getElementById("bar");
-  if(count){
-    bar.innerHTML=`<button class="cart" id="cartBtn"><span>Ver pedido (${count} ${count===1?"item":"itens"})</span><span>${brl(total)}</span></button>`;
-    document.getElementById("cartBtn").onclick=openSheet;
-  }else{
-    bar.innerHTML=`<button class="talk" id="talkBtn">Quero esse cardápio no meu restaurante</button>`;
-    document.getElementById("talkBtn").onclick=()=>window.open(talkUrl,"_blank","noopener");
+.logo small {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  color: #eee;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  color: white;
+  font-size: 13px;
+}
+
+.nav-links a { transition: .3s; }
+.nav-links a:hover { color: var(--gold); }
+
+.nav-button {
+  border: 1px solid var(--gold);
+  padding: 12px 20px;
+  color: var(--gold);
+  border-radius: 2px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 760px;
+  height: 100vh;
+  max-height: 950px;
+  background:
+    linear-gradient(90deg, rgba(10,20,15,.88), rgba(10,20,15,.35)),
+    url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=85');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding-top: 70px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 1.06;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  max-width: 470px;
+  line-height: 1.9;
+  color: #e5e5df;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 27px;
+  background: var(--gold);
+  color: #17251d;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  transition: .3s;
+  border: 1px solid var(--gold);
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.button-outline {
+  background: transparent;
+  color: white;
+  border-color: rgba(255,255,255,.6);
+  margin-left: 10px;
+}
+
+.hero-note {
+  position: absolute;
+  bottom: 35px;
+  right: 5%;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+.intro {
+  padding: 110px 0;
+  background: var(--cream);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.intro-image {
+  height: 490px;
+  position: relative;
+}
+
+.intro-image img {
+  height: 100%;
+}
+
+.intro-image::after {
+  content: "";
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid var(--gold);
+  z-index: -1;
+}
+
+.section-label {
+  color: #987746;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.15;
+  color: var(--green);
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.intro-text {
+  font-size: 14px;
+  line-height: 2;
+  color: #686b63;
+  margin-bottom: 30px;
+}
+
+.text-link {
+  display: inline-block;
+  color: #997748;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 7px;
+}
+
+.menu-section {
+  background: var(--green);
+  padding: 105px 0;
+  color: white;
+}
+
+.center { text-align: center; }
+
+.menu-section .section-title { color: white; }
+
+.menu-section .section-label { color: var(--gold); }
+
+.menu-description {
+  color: #c6c9c1;
+  font-size: 14px;
+  max-width: 520px;
+  line-height: 1.8;
+  margin: 0 auto 50px;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.food-card {
+  background: #20372b;
+  transition: .4s;
+  overflow: hidden;
+}
+
+.food-card:hover { transform: translateY(-9px); }
+
+.food-card img {
+  height: 245px;
+  transition: .5s;
+}
+
+.food-card:hover img { transform: scale(1.05); }
+
+.food-info { padding: 25px; }
+
+.food-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.food-info p {
+  color: #c4c9c1;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.gallery {
+  padding: 105px 0;
+  background: #eae4d9;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: 220px 220px;
+  gap: 15px;
+  margin-top: 45px;
+}
+
+.gallery-grid img {
+  height: 100%;
+  transition: .5s;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item:hover img { transform: scale(1.07); }
+
+.gallery-item:first-child { grid-row: span 2; }
+
+.quote-section {
+  background:
+    linear-gradient(rgba(14,28,20,.83), rgba(14,28,20,.83)),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80');
+  background-position: center;
+  background-size: cover;
+  padding: 115px 20px;
+  text-align: center;
+  color: white;
+}
+
+.quote-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 53px);
+  font-weight: 400;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.3;
+}
+
+.quote-section p {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+  margin-top: 25px;
+}
+
+.contact {
+  padding: 110px 0;
+  background: var(--cream);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.contact-info {
+  margin-top: 30px;
+}
+
+.contact-line {
+  display: flex;
+  gap: 17px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #e7dcc8;
+  color: #8d7047;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.contact-line strong {
+  display: block;
+  color: var(--green);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.contact-line span {
+  color: #73756d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contact-image {
+  height: 430px;
+}
+
+.contact-image img { height: 100%; }
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.contact-buttons .button-outline {
+  color: var(--green);
+  border-color: var(--green);
+  margin: 0;
+}
+
+footer {
+  background: #101d16;
+  color: white;
+  padding: 45px 0 25px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 35px;
+}
+
+.footer-text {
+  color: #9da69e;
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 330px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+  font-size: 12px;
+  color: #c9cfc9;
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+.copyright {
+  border-top: 1px solid #29382e;
+  padding-top: 22px;
+  text-align: center;
+  font-size: 10px;
+  color: #89928a;
+  letter-spacing: 1px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 58px;
+  height: 58px;
+  background: #20c76a;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+  z-index: 999;
+  box-shadow: 0 5px 25px #0003;
+  transition: .3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width: 800px) {
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: var(--green);
+    display: none;
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  .nav-links.active { display: flex; }
+
+  .hero {
+    min-height: 700px;
+    background-position: 60% center;
+  }
+
+  .hero-content { padding-top: 80px; }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .button-outline { margin-left: 0; }
+
+  .intro-grid, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .intro-image { height: 350px; }
+
+  .food-grid { grid-template-columns: 1fr; }
+
+  .food-card img { height: 260px; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 210px 170px 170px;
+  }
+
+  .gallery-item:first-child { grid-row: auto; }
+
+  .gallery-item:first-child { grid-column: span 2; }
+
+  .contact-image { height: 300px; }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .footer-links { flex-wrap: wrap; }
+
+  .hero-note { display: none; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
   }
 }
-function openSheet(){
-  const L=lines();
-  document.getElementById("lines").innerHTML=L.map(l=>`<div class="line"><span>${l.q}× ${l.name}</span><span>${brl(l.sub)}</span></div>`).join("");
-  document.getElementById("sumTotal").textContent=brl(L.reduce((s,l)=>s+l.sub,0));
-  document.getElementById("sheet").classList.add("show");
-}
-document.getElementById("closeBtn").onclick=()=>document.getElementById("sheet").classList.remove("show");
-document.getElementById("sendBtn").onclick=()=>{
-  const L=lines();if(!L.length)return;
-  const nome=document.getElementById("nome").value.trim(),loc=document.getElementById("local").value.trim();
-  const total=L.reduce((s,l)=>s+l.sub,0);
-  let m="*Novo pedido* 🍽️\n\n"+L.map(l=>`${l.q}× ${l.name} — ${brl(l.sub)}`).join("\n")+`\n\n*Total: ${brl(total)}*`;
-  if(nome)m+=`\nNome: ${nome}`;
-  if(loc)m+=`\nMesa/endereço: ${loc}`;
-  window.open("https://wa.me/?text="+encodeURIComponent(m),"_blank","noopener");
-};
-render();
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#inicio" class="logo">
+      QUINTAL
+      <small>BISTRÔ</small>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">O Quintal</a>
+      <a href="#cardapio">Destaques</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+      <a class="nav-button" href="https://wa.me/5516993885620" target="_blank">Fale conosco</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">Uma experiência especial</div>
+      <h1>O prazer de<br>saborear <span>bons momentos.</span></h1>
+      <p>
+        Descubra um lugar onde a gastronomia encontra a experiência
+        de compartilhar bons momentos.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#cardapio" class="button">Conheça os destaques</a>
+        <a href="https://wa.me/5516993885620" target="_blank" class="button button-outline">Entre em contato</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-note">Santa Rosa de Viterbo · São Paulo</div>
+</section>
+
+<section class="intro" id="sobre">
+  <div class="container intro-grid">
+    <div class="intro-image reveal">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85" alt="Ambiente de restaurante">
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">Bem-vindo ao Quintal</div>
+      <h2 class="section-title">Mais que uma refeição, uma experiência.</h2>
+      <p class="intro-text">
+        O Quintal Bistrô é um convite para aproveitar a gastronomia,
+        reunir pessoas especiais e transformar momentos simples
+        em boas lembranças.
+      </p>
+      <p class="intro-text">
+        Um espaço para quem aprecia boa comida, atendimento
+        acolhedor e o prazer de estar à mesa.
+      </p>
+      <a href="#contato" class="text-link">Venha conhecer →</a>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="cardapio">
+  <div class="container">
+    <div class="center reveal">
+      <div class="section-label">Sabores do Quintal</div>
+      <h2 class="section-title">Destaques gastronômicos</h2>
+      <p class="menu-description">
+        Conheça alguns dos destaques associados à experiência
+        do Quintal Bistrô. Consulte o estabelecimento para confirmar
+        o cardápio e a disponibilidade.
+      </p>
+    </div>
+
+    <div class="food-grid">
+      <article class="food-card reveal">
+        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=85" alt="Prato de parmegiana">
+        <div class="food-info">
+          <h3>Filé à parmegiana</h3>
+          <p>Um clássico da gastronomia para quem aprecia uma boa refeição.</p>
+        </div>
+      </article>
+
+      <article class="food-card reveal">
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=85" alt="Prato de macarrão">
+        <div class="food-info">
+          <h3>Macarrão ao vivo</h3>
+          <p>Uma experiência gastronômica que valoriza o preparo dos pratos.</p>
+        </div>
+      </article>
+
+      <article class="food-card reveal">
+        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=85" alt="Bebidas e sucos">
+        <div class="food-info">
+          <h3>Sucos e bebidas</h3>
+          <p>Opções para acompanhar sua refeição e completar o momento.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="center reveal">
+      <div class="section-label">Um pouco do ambiente</div>
+      <h2 class="section-title">Momentos que merecem ser vividos.</h2>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85" alt="Mesa de restaurante">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=700&q=85" alt="Ambiente de restaurante">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85" alt="Prato servido">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=85" alt="Interior de restaurante">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=85" alt="Refeição especial">
+      </div>
+    </div>
+
+    <p style="text-align:center;color:#777;font-size:11px;margin-top:18px">
+      Imagens ilustrativas. Substituir pelas fotografias oficiais do Quintal Bistrô.
+    </p>
+  </div>
+</section>
+
+<section class="quote-section">
+  <h2>“A vida acontece ao redor de uma boa mesa.”</h2>
+  <p>Quintal Bistrô · Santa Rosa de Viterbo</p>
+</section>
+
+<section class="contact" id="contato">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="section-label">Estamos esperando você</div>
+      <h2 class="section-title">Seu próximo momento especial começa aqui.</h2>
+      <p class="intro-text">
+        Entre em contato com o Quintal Bistrô e consulte informações
+        sobre atendimento, horários e cardápio.
+      </p>
+
+      <div class="contact-info">
+        <div class="contact-line">
+          <div class="contact-icon">⌖</div>
+          <div>
+            <strong>Endereço</strong>
+            <span>Rua Francisco Carvalho de Andrade, 143<br>Santa Rosa de Viterbo – SP</span>
+          </div>
+        </div>
+
+        <div class="contact-line">
+          <div class="contact-icon">☎</div>
+          <div>
+            <strong>Telefone / WhatsApp</strong>
+            <span>(16) 99388-5620</span>
+          </div>
+        </div>
+
+        <div class="contact-line">
+          <div class="contact-icon">◎</div>
+          <div>
+            <strong>Instagram</strong>
+            <span>@quintalbistrosrv</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-buttons">
+        <a class="button" href="https://wa.me/5516993885620" target="_blank">Conversar no WhatsApp</a>
+        <a class="button button-outline" href="https://www.instagram.com/quintalbistrosrv/" target="_blank">Instagram</a>
+      </div>
+    </div>
+
+    <div class="contact-image reveal">
+      <a href="https://www.google.com/maps/search/?api=1&query=Rua+Francisco+Carvalho+de+Andrade+143+Santa+Rosa+de+Viterbo+SP" target="_blank">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85" alt="Ambiente acolhedor">
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="logo">QUINTAL <small>BISTRÔ</small></div>
+        <p class="footer-text" style="margin-top:18px">
+          Gastronomia e bons momentos em Santa Rosa de Viterbo.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#cardapio">Destaques</a>
+        <a href="#contato">Contato</a>
+        <a href="https://www.instagram.com/quintalbistrosrv/" target="_blank">Instagram</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> QUINTAL BISTRÔ · TODOS OS DIREITOS RESERVADOS
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/5516993885620" target="_blank" aria-label="Falar pelo WhatsApp">✆</a>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuToggle.textContent = navLinks.classList.contains('active') ? '×' : '☰';
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuToggle.textContent = '☰';
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
